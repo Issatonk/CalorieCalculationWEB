@@ -27,20 +27,40 @@ namespace CalorieCalculation.BusinessLogic
 
             return result;
         }
-
-        public Task<bool> Delete(int id)
+        public async Task<Category> GetById(int id)
         {
-            throw new NotImplementedException();
+            if (id <= 0)
+            {
+                throw new ArgumentException("Invalid id");
+            }
+            return await _categoryRepository.GetById(id);
+        }
+        public async Task<Category> Update(Category category)
+        {
+            if (category == null)
+            {
+                throw new ArgumentNullException(nameof(category));
+            }
+            if (category.Id <= 0
+                || string.IsNullOrWhiteSpace(category.Name))
+            {
+                throw new ArgumentException(nameof(category));
+            }
+            var result = await _categoryRepository.Update(category);
+
+            return result;
+        }
+        public async Task<bool> Delete(int id)
+        {
+            if (id <= 0)
+            {
+                throw new ArgumentException("Invalid id");
+            }
+            return await _categoryRepository.Delete(id);
         }
 
-        public Task<Category> GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task<Category> Update(Category newUser)
-        {
-            throw new NotImplementedException();
-        }
+
+     
     }
 }
