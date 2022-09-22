@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalorieCalculation.API", "CalorieCalculationAPI\CalorieCalculation.API.csproj", "{30E8DE4A-7360-45CC-9418-487E4C0DC283}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalorieCalculation.Core", "CalorieCalculation.Core\CalorieCalculation.Core.csproj", "{1AEB55BB-2BCA-45A0-8E3E-9943D116E10C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalorieCalculation.BusinessLogic", "CalorieCalculation.BusinessLogic\CalorieCalculation.BusinessLogic.csproj", "{8FF9CEA0-C8EB-440B-8CE0-96EEEDCA88D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalorieCalculation.DataAccess.Sqlite", "CalorieCalculation.DataAccess.Sqlite\CalorieCalculation.DataAccess.Sqlite.csproj", "{72B476F4-5145-4614-AB14-559B3E9AC1AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8F052B18-CB88-4232-B339-3B838C1D28C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalorieCalculation.BusinessLogic.Tests", "CalorieCalculation.BusinessLogic.Tests\CalorieCalculation.BusinessLogic.Tests.csproj", "{3824A160-6A78-4CBE-881D-8EF68AAB067E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1AEB55BB-2BCA-45A0-8E3E-9943D116E10C} = {1AEB55BB-2BCA-45A0-8E3E-9943D116E10C}
+		{8FF9CEA0-C8EB-440B-8CE0-96EEEDCA88D5} = {8FF9CEA0-C8EB-440B-8CE0-96EEEDCA88D5}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30E8DE4A-7360-45CC-9418-487E4C0DC283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30E8DE4A-7360-45CC-9418-487E4C0DC283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30E8DE4A-7360-45CC-9418-487E4C0DC283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30E8DE4A-7360-45CC-9418-487E4C0DC283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AEB55BB-2BCA-45A0-8E3E-9943D116E10C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AEB55BB-2BCA-45A0-8E3E-9943D116E10C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AEB55BB-2BCA-45A0-8E3E-9943D116E10C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AEB55BB-2BCA-45A0-8E3E-9943D116E10C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FF9CEA0-C8EB-440B-8CE0-96EEEDCA88D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FF9CEA0-C8EB-440B-8CE0-96EEEDCA88D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FF9CEA0-C8EB-440B-8CE0-96EEEDCA88D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FF9CEA0-C8EB-440B-8CE0-96EEEDCA88D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72B476F4-5145-4614-AB14-559B3E9AC1AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72B476F4-5145-4614-AB14-559B3E9AC1AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72B476F4-5145-4614-AB14-559B3E9AC1AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72B476F4-5145-4614-AB14-559B3E9AC1AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3824A160-6A78-4CBE-881D-8EF68AAB067E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3824A160-6A78-4CBE-881D-8EF68AAB067E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3824A160-6A78-4CBE-881D-8EF68AAB067E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3824A160-6A78-4CBE-881D-8EF68AAB067E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3824A160-6A78-4CBE-881D-8EF68AAB067E} = {8F052B18-CB88-4232-B339-3B838C1D28C3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37A1B21B-194C-422C-A47F-8018ACB3E68A}
+	EndGlobalSection
+EndGlobal
