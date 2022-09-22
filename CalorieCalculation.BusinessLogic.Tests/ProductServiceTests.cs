@@ -2,6 +2,7 @@ using AutoFixture;
 using CalorieCalculation.Core;
 using CalorieCalculation.Core.Repositories;
 using Moq;
+using System.ComponentModel;
 
 namespace CalorieCalculation.BusinessLogic.Tests
 {
@@ -42,8 +43,8 @@ namespace CalorieCalculation.BusinessLogic.Tests
         }
 
         [Theory]
-        [MemberData(nameof(TestDataGenerator.GetTestProductForCreateOnly), MemberType = typeof(TestDataGenerator))]
-        [MemberData(nameof(TestDataGenerator.GetTestProducts), MemberType = typeof(TestDataGenerator))]
+        [MemberData(nameof(TestProductGenerator.GetTestProductForCreateOnly), MemberType = typeof(TestProductGenerator))]
+        [MemberData(nameof(TestProductGenerator.GetTestProducts), MemberType = typeof(TestProductGenerator))]
         public async void Create_ProductIsNotValid_ThrowArgumentInvalidException(Product test)
         {
             //arrange
@@ -121,8 +122,8 @@ namespace CalorieCalculation.BusinessLogic.Tests
         }
 
         [Theory]
-        [MemberData(nameof(TestDataGenerator.GetTestProductForUpdateOnly), MemberType = typeof(TestDataGenerator))]
-        [MemberData(nameof(TestDataGenerator.GetTestProducts), MemberType = typeof(TestDataGenerator))]
+        [MemberData(nameof(TestProductGenerator.GetTestProductForUpdateOnly), MemberType = typeof(TestProductGenerator))]
+        [MemberData(nameof(TestProductGenerator.GetTestProducts), MemberType = typeof(TestProductGenerator))]
         public async void Update_ProductIsNotValid_ThrowArgumentInvalidException(Product test)
         {
             //arrange
@@ -161,7 +162,7 @@ namespace CalorieCalculation.BusinessLogic.Tests
         }
     }
 
-    public class TestDataGenerator 
+    public class TestProductGenerator 
     {
         static Fixture fixture = new Fixture();
         
