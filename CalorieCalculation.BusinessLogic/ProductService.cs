@@ -20,13 +20,13 @@ namespace CalorieCalculation.BusinessLogic
                 throw new ArgumentNullException("Product is null");
             }
             if (product.Id != 0
-                || String.IsNullOrWhiteSpace(product.Name)
+                || string.IsNullOrWhiteSpace(product.Name)
                 || product.Category == null
                 || product.Calories < 0
                 || product.Carbohydrates < 0
                 || product.Proteins < 0
                 || product.Fats <0
-                || product.Picture == null)
+                || string.IsNullOrEmpty(product.PictureLink))
             {
                 throw new ArgumentException("Argument is invalid");
             }
@@ -55,13 +55,13 @@ namespace CalorieCalculation.BusinessLogic
                 throw new ArgumentNullException("Product is null");
             }
             if (product.Id <= 0
-                || String.IsNullOrWhiteSpace(product.Name)
+                || string.IsNullOrWhiteSpace(product.Name)
                 || product.Category == null
                 || product.Calories < 0
                 || product.Carbohydrates < 0
                 || product.Proteins < 0
                 || product.Fats < 0
-                || product.Picture == null)
+                || string.IsNullOrEmpty(product.PictureLink))
             {
                 throw new ArgumentException("Argument is invalid");
             }
