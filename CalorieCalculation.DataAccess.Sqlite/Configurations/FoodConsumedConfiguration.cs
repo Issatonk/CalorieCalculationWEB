@@ -9,8 +9,8 @@ namespace CalorieCalculation.DataAccess.Sqlite.Configurations
         public void Configure(EntityTypeBuilder<FoodConsumed> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.User).IsRequired();
-            builder.Property(x => x.Product).IsRequired();
+            //builder.Property(x => x.User).IsRequired();
+            //builder.Property(x => x.Product).IsRequired();
             builder.Property(x=>x.Datetime).IsRequired();
         }
     }

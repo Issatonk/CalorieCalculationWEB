@@ -1,3 +1,6 @@
+using CalorieCalculation.DataAccess.Sqlite;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<CalorieCalculationContext>(options =>
+{
+    options.UseSqlite(builder.Configuration["DefaultConnection"]);
+});
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddProfile<DataAccessMappingProfile>();
+});
 
 var app = builder.Build();
 
