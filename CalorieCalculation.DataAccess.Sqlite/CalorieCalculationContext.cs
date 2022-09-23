@@ -1,6 +1,6 @@
 ﻿namespace CalorieCalculation.DataAccess.Sqlite
 {
-    public class Class1
+    public class CalorieCalculationContext
     {
 
     }
