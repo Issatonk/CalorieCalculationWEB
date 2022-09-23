@@ -213,7 +213,7 @@ namespace CalorieCalculation.BusinessLogic.Tests
             };
             yield return new object[]
             {
-                fixture.Build<Product>().Without(x=>x.Picture).Create()
+                fixture.Build<Product>().Without(x=>x.PictureLink).Create()
             };
 
         }
