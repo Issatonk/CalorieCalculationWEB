@@ -163,9 +163,12 @@ namespace CalorieCalculation.BusinessLogic.Tests
     {
         private static Fixture fixture = new Fixture();
 
-        public static IEnumerable<object> GetUsersForCreate()
+        public static IEnumerable<object[]> GetUsersForCreate()
         {
-            yield return fixture.Build<User>().With(x => x.Id, 1).Create();
+            yield return new object[] 
+            { 
+                fixture.Build<User>().With(x => x.Id, 1).Create() 
+            };
         }
         public static IEnumerable<object> GetUsersForUpdate()
         {
