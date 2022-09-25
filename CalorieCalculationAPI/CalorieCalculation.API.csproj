@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CalorieCalculation.BusinessLogic\CalorieCalculation.BusinessLogic.csproj" />
     <ProjectReference Include="..\CalorieCalculation.DataAccess.Sqlite\CalorieCalculation.DataAccess.Sqlite.csproj" />
   </ItemGroup>
 
