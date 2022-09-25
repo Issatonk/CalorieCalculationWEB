@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CalorieCalculationAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
         private readonly IMapper _mapper;
@@ -29,7 +29,7 @@ namespace CalorieCalculationAPI.Controllers
             var result = await _productService.GetProduct(id);
             return Ok(result);
         }
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
             var result = await _productService.GetAllProducts();
