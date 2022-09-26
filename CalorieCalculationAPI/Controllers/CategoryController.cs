@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CalorieCalculationAPI.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class CategoryController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
