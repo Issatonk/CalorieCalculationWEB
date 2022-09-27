@@ -23,19 +23,11 @@ namespace CalorieCalculation.BusinessLogic.Tests
             //arrange
             Fixture fixture = new Fixture();
             var user = fixture.Build<User>().Without(x => x.Id).Create();
-            var expected = new User
-            {
-                Id = 1,
-                Email = user.Email,
-                Name = user.Name,
-                Password = user.Password
-            };
-            _repositoryMock.Setup(x => x.Create(user)).Returns(Task.FromResult(expected));
+
             //act
             var result = await _service.Create(user);
             //assert
             _repositoryMock.Verify(x=>x.Create(user), Times.Once);
-            Assert.Equal(expected, result);
         }
        
         [Fact]
@@ -167,18 +159,18 @@ namespace CalorieCalculation.BusinessLogic.Tests
         {
             yield return new object[] 
             { 
-                fixture.Build<User>().With(x => x.Id, 1).Create() 
+                fixture.Build<User>().With(x => x.Id, "test").Create() 
             };
         }
         public static IEnumerable<object> GetUsersForUpdate()
         {
             yield return new object[] 
             { 
-                fixture.Build<User>().With(x => x.Id, 0).Create() 
+                fixture.Build<User>().Without(x => x.Id).Create() 
             };
             yield return new object[] 
             { 
-                fixture.Build<User>().With(x => x.Id, -1).Create() 
+                fixture.Build<User>().With(x => x.Id, " ").Create() 
             };
         }
 
@@ -186,7 +178,11 @@ namespace CalorieCalculation.BusinessLogic.Tests
         {
             yield return new object[]
             {
-                fixture.Build<User>().Without(x=>x.Name).Create()
+                fixture.Build<User>().Without(x=>x.FirstName).Create()
+            };
+            yield return new object[]
+            {
+                fixture.Build<User>().Without(x=>x.LastName).Create()
             };
             yield return new object[]
             {
@@ -194,7 +190,7 @@ namespace CalorieCalculation.BusinessLogic.Tests
             };
             yield return new object[]
             {
-                fixture.Build<User>().Without(x=>x.Password).Create()
+                fixture.Build<User>().Without(x=>x.PasswordHash).Create()
             };
         }
 

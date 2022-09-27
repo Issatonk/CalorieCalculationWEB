@@ -17,7 +17,7 @@ namespace CalorieCalculation.DataAccess.Sqlite.Repository
         }
         public async Task<User> Create(User newUser)
         {
-            if (await _context.Users.FirstOrDefaultAsync(x => x.Name == newUser.Name) != null)
+            if (await _context.Users.FirstOrDefaultAsync(x => x.Name == newUser.UserName) != null)
             {
                 throw new ArgumentException("user is exists");
             }

@@ -18,9 +18,9 @@ namespace CalorieCalculation.BusinessLogic
             {
                 throw new ArgumentNullException(nameof(newUser));
             }
-            if(newUser.Id !=0
-                || string.IsNullOrWhiteSpace(newUser.Name)
-                || string.IsNullOrWhiteSpace(newUser.Password)
+            if(string.IsNullOrWhiteSpace(newUser.Id)
+                || string.IsNullOrWhiteSpace(newUser.FirstName)
+                || string.IsNullOrWhiteSpace(newUser.LastName)
                 || string.IsNullOrWhiteSpace(newUser.Email))
             {
                 throw new ArgumentException(nameof(newUser));
@@ -43,9 +43,9 @@ namespace CalorieCalculation.BusinessLogic
             {
                 throw new ArgumentNullException(nameof(user));
             }
-            if (user.Id <= 0
-                || string.IsNullOrWhiteSpace(user.Name)
-                || string.IsNullOrWhiteSpace(user.Password)
+            if (string.IsNullOrEmpty(user.Id)
+                || string.IsNullOrWhiteSpace(user.FirstName)
+                || string.IsNullOrWhiteSpace(user.LastName)
                 || string.IsNullOrWhiteSpace(user.Email))
             {
                 throw new ArgumentException(nameof(user));
