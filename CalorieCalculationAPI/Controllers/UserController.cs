@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CalorieCalculation.API.Contracts;
 using CalorieCalculation.Core;
 using CalorieCalculation.Core.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -19,9 +20,10 @@ namespace CalorieCalculationAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(User category)
+        public async Task<IActionResult> Create(UserCreateRequest user)
         {
-            var result = await _userService.Create(category);
+            var request =_mapper.Map<User>(user);
+            var result = await _userService.Create(request);
             return Ok(result);
         }
 

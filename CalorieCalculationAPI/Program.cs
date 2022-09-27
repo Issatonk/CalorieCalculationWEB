@@ -1,3 +1,4 @@
+using CalorieCalculation.API;
 using CalorieCalculation.BusinessLogic;
 using CalorieCalculation.Core.Repositories;
 using CalorieCalculation.Core.Services;
@@ -30,6 +31,7 @@ builder.Services.AddDbContext<CalorieCalculationContext>(options =>
 builder.Services.AddAutoMapper(cfg =>
 {
     cfg.AddProfile<DataAccessMappingProfile>();
+    cfg.AddProfile<ApiMappingProfile>();
 });
 
 var app = builder.Build();
