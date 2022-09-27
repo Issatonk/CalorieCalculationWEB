@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using CalorieCalculation.API.Contracts;
+using CalorieCalculation.Core;
+
 
 namespace CalorieCalculation.API
 {
@@ -8,6 +10,7 @@ namespace CalorieCalculation.API
         public ApiMappingProfile()
         {
             CreateMap<CategoryCreateRequest, Core.Category>();
+            CreateMap<UserCreateRequest, User>();
         }
     }
 }
