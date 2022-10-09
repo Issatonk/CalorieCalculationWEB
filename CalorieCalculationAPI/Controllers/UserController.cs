@@ -19,6 +19,12 @@ namespace CalorieCalculationAPI.Controllers
             _mapper = mapper;
         }
 
+        [HttpPost("[action]")]
+        public async Task<IActionResult> AuthToken([FromBody]AuthRequest request)
+        {
+            return null;
+        }
+
         [HttpPost]
         public async Task<IActionResult> Create(UserCreateRequest user)
         {
