@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CalorieCalculation.API.Auth;
 using CalorieCalculation.API.Contracts;
 using CalorieCalculation.Core;
 using CalorieCalculation.Core.Services;
@@ -12,17 +13,22 @@ namespace CalorieCalculationAPI.Controllers
     {
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
+        private readonly IJwtService _jwtService;
 
-        public UserController(IUserService userService, IMapper mapper)
+        public UserController(IUserService userService, IMapper mapper, IJwtService jwtService)
         {
             _userService = userService;
             _mapper = mapper;
+            _jwtService = jwtService;
         }
 
         [HttpPost("[action]")]
         public async Task<IActionResult> AuthToken([FromBody]AuthRequest request)
         {
-            return null;
+            var token = await _jwtService.GetTokenAsync(request);
+            if (token == null)
+                return Unauthorized();
+            return Ok(new AuthResponse { Token = token });
         }
 
         [HttpPost]

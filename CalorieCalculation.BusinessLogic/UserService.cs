@@ -62,5 +62,10 @@ namespace CalorieCalculation.BusinessLogic
             }
             return await _userRepository.Delete(id);
         }
+
+        public async Task<User> GetByUsername(string username)
+        {
+            return await _userRepository.GetByUsername(username);
+        }
     }
 }

@@ -47,8 +47,10 @@ namespace CalorieCalculation.DataAccess.Sqlite.Repository
             return Convert.ToBoolean(await _context.SaveChangesAsync());
         }
 
-
-
-
+        public async Task<User> GetByUsername(string username)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Name == username);
+            return _mapper.Map<Entities.User, Core.User>(user);
+        }
     }
 }
