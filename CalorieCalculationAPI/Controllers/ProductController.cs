@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CalorieCalculation.Core;
 using CalorieCalculation.Core.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CalorieCalculationAPI.Controllers
@@ -18,6 +19,7 @@ namespace CalorieCalculationAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create(Product product)
         {
             var result = await _productService.CreateProduct(product);
