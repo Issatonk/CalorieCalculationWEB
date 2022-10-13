@@ -15,6 +15,8 @@ namespace CalorieCalculation.DataAccess.Sqlite
         public DbSet<Product> Products { get; set; }
         public DbSet<FoodConsumed> FoodsConsumed { get; set; }
 
+        public DbSet<UserRefreshToken> UserRefreshTokens { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserConfiguration());

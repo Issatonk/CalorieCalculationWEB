@@ -8,5 +8,6 @@
         Task<bool> Delete(int id);
 
         Task<User> GetByUsername(string username);
+
     }
 }

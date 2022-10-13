@@ -23,14 +23,14 @@ namespace CalorieCalculation.DataAccess.Sqlite.Repository
 
         public async Task<Product> CreateProduct(Product product)
         {
-            if(await _context.Products.FirstOrDefaultAsync(x=>x.Name == product.Name) != null)
+            if (await _context.Products.FirstOrDefaultAsync(x => x.Name == product.Name) != null)
             {
                 throw new ArgumentException("product is exists");
             }
             var newProduct = _mapper.Map<Core.Product, Entities.Product>(product);
             var result = await _context.Products.AddAsync(newProduct);
             await _context.SaveChangesAsync();
-            return _mapper.Map<Entities.Product,Core.Product>(result.Entity);
+            return _mapper.Map<Entities.Product, Core.Product>(result.Entity);
         }
         public async Task<Product> GetProduct(int id)
         {
@@ -40,12 +40,12 @@ namespace CalorieCalculation.DataAccess.Sqlite.Repository
         public async Task<IEnumerable<Product>> GetAllProducts()
         {
             var result = await _context.Products.AsNoTracking().ToArrayAsync();
-            return _mapper.Map < Entities.Product[],Core.Product[]>(result);
+            return _mapper.Map<Entities.Product[], Core.Product[]>(result);
         }
         public async Task<Product> UpdateProduct(Product product)
         {
             var update = _mapper.Map<Core.Product, Entities.Product>(product);
-            var result =  _context.Products.Update(update);
+            var result = _context.Products.Update(update);
             await _context.SaveChangesAsync();
             return _mapper.Map<Entities.Product, Core.Product>(result.Entity);
         }
